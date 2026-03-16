@@ -29,7 +29,7 @@ A production-ready **Model Context Protocol (MCP)** server providing unified sec
 
 ## Architecture
 
-![Multi-Cloud Security MCP Server Architecture](docs/architecture.svg)
+![Multi-Cloud Security MCP Server Architecture](docs/multicloud-security-mcp-architecture.svg)
 
 ---
 
