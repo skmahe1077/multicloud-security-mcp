@@ -1,4 +1,7 @@
-# Multi-Cloud Security MCP Server
+
+<p align="center">
+  <img src="docs/multicloud-security-mcp-logo.svg" alt="multicloud-security-mcp" width="520"/>
+</p>
 
 [![npm version](https://img.shields.io/npm/v/multicloud-security-mcp.svg)](https://www.npmjs.com/package/multicloud-security-mcp)
 [![PyPI version](https://img.shields.io/pypi/v/multicloud-security-mcp.svg)](https://pypi.org/project/multicloud-security-mcp/)

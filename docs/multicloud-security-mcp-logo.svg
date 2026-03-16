@@ -1,0 +1,71 @@
+<svg viewBox="0 0 520 130" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Card background -->
+  <rect x="0" y="0" width="520" height="130" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Icon background -->
+  <rect x="12" y="12" width="106" height="106" rx="12" fill="#0D1117"/>
+
+  <!-- Shield outline (white) -->
+  <path d="M 39 30 L 91 30 L 91 80 Q 91 100 65 107 Q 39 100 39 80 Z"
+        fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+  <!-- Triangle connection lines (white, thin) -->
+  <line x1="52" y1="53" x2="78" y2="53" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+  <line x1="52" y1="53" x2="65" y2="86" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+  <line x1="78" y1="53" x2="65" y2="86" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+
+  <!-- GCP teal node (top-left) -->
+  <circle cx="52" cy="53" r="8" fill="#1D9E75"/>
+  <circle cx="52" cy="53" r="4" fill="#E1F5EE"/>
+
+  <!-- AWS amber node (top-right) -->
+  <circle cx="78" cy="53" r="8" fill="#EF9F27"/>
+  <circle cx="78" cy="53" r="4" fill="#FAEEDA"/>
+
+  <!-- Azure blue node (bottom-center) -->
+  <circle cx="65" cy="86" r="8" fill="#378ADD"/>
+  <circle cx="65" cy="86" r="4" fill="#E6F1FB"/>
+
+  <!-- Wordmark: multicloud-security -->
+  <text x="138" y="56"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="26" font-weight="300" letter-spacing="-0.5"
+        fill="#0D1117">multicloud-security</text>
+
+  <!-- Wordmark: mcp server -->
+  <text x="138" y="84"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="22" font-weight="700" letter-spacing="1"
+        fill="#0D1117">mcp</text>
+  <text x="192" y="84"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="22" font-weight="300" letter-spacing="0"
+        fill="#5f6875"> server</text>
+
+  <!-- Cloud pill tags -->
+  <!-- AWS -->
+  <rect x="138" y="96" width="48" height="18" rx="4" fill="#FAEEDA"/>
+  <text x="162" y="109" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="10" font-weight="500" fill="#854F0B">AWS · 15</text>
+
+  <!-- Azure -->
+  <rect x="192" y="96" width="56" height="18" rx="4" fill="#E6F1FB"/>
+  <text x="220" y="109" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="10" font-weight="500" fill="#185FA5">Azure · 13</text>
+
+  <!-- GCP -->
+  <rect x="254" y="96" width="50" height="18" rx="4" fill="#E1F5EE"/>
+  <text x="279" y="109" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="10" font-weight="500" fill="#0F6E56">GCP · 13</text>
+
+  <!-- 41 tools badge -->
+  <rect x="312" y="96" width="64" height="18" rx="4" fill="#0D1117"/>
+  <text x="344" y="109" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="10" font-weight="500" fill="#ffffff">41 tools</text>
+
+</svg>
