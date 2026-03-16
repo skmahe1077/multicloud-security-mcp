@@ -1,0 +1,58 @@
+# GCP IAM Role Assignments for Multi-Cloud Security MCP Server
+# Replace SERVICE_ACCOUNT with your service account email
+# Replace PROJECT_ID / ORG_ID with your actual values
+
+# Security Command Center Findings Viewer
+gcloud organizations add-iam-policy-binding ORG_ID \
+  --member="serviceAccount:SERVICE_ACCOUNT" \
+  --role="roles/securitycenter.findingsViewer"
+
+# Chronicle SIEM Viewer
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:SERVICE_ACCOUNT" \
+  --role="roles/chroniclesm.viewer"
+
+# IAM Recommender Viewer
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:SERVICE_ACCOUNT" \
+  --role="roles/recommender.viewer"
+
+# Cloud DLP Reader
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:SERVICE_ACCOUNT" \
+  --role="roles/dlp.reader"
+
+# Cloud Logging Viewer (for Audit Logs, Access Transparency, VPC SC, Cloud Armor)
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:SERVICE_ACCOUNT" \
+  --role="roles/logging.viewer"
+
+# Cloud KMS Viewer
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:SERVICE_ACCOUNT" \
+  --role="roles/cloudkms.viewer"
+
+# Secret Manager Viewer
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:SERVICE_ACCOUNT" \
+  --role="roles/secretmanager.viewer"
+
+# Cloud Asset Viewer
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:SERVICE_ACCOUNT" \
+  --role="roles/cloudasset.viewer"
+
+# Binary Authorization Policy Viewer
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:SERVICE_ACCOUNT" \
+  --role="roles/binaryauthorization.policyViewer"
+
+# Container Analysis Occurrences Viewer (for Artifact Registry vulnerabilities)
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:SERVICE_ACCOUNT" \
+  --role="roles/containeranalysis.occurrences.viewer"
+
+# Compute Viewer (for Cloud Armor security policies)
+gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member="serviceAccount:SERVICE_ACCOUNT" \
+  --role="roles/compute.viewer"

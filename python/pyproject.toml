@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "multicloud-security-mcp"
+version = "1.0.0"
+description = "Multi-Cloud Security MCP Server — unified security visibility across AWS, Azure, and GCP for AI agents and Claude Desktop"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Mahendran Selvakumar" },
+]
+keywords = [
+    "mcp",
+    "model-context-protocol",
+    "security",
+    "cloud-security",
+    "aws",
+    "azure",
+    "gcp",
+    "multicloud",
+    "claude",
+    "ai-agent",
+    "siem",
+    "devsecops",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: System :: Systems Administration",
+]
+
+[project.urls]
+Homepage = "https://github.com/devopstronaut/multicloud-security-mcp"
+Repository = "https://github.com/devopstronaut/multicloud-security-mcp"
+Issues = "https://github.com/devopstronaut/multicloud-security-mcp/issues"
+
+[project.scripts]
+multicloud-security-mcp = "multicloud_security_mcp:serve"
+
+[tool.hatch.build.targets.wheel]
+packages = ["multicloud_security_mcp"]
