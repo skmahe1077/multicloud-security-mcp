@@ -27,47 +27,9 @@ A production-ready **Model Context Protocol (MCP)** server providing unified sec
 
 ## Architecture
 
-```
-                    ┌─────────────────────────────────┐
-                    │   Claude Desktop / AI Agent      │
-                    │          (MCP Client)            │
-                    └───────────────┬─────────────────┘
-                                    │ stdio
-┌───────────────────────────────────▼───────────────────────────────────┐
-│                         MCP Server                                    │
-│                                                                       │
-│  ┌─────────────┐   ┌──────────────┐   ┌────────────────────────────┐ │
-│  │  Resources   │   │  41 Tools    │   │   Cross-Cloud Tools (X1-X5)│ │
-│  │  (5 URIs)   │   │  per-cloud   │   │   parallel via p-limit(3)  │ │
-│  └─────────────┘   └──────┬───────┘   └────────────┬───────────────┘ │
-│                            │                        │                 │
-│  ┌─────────────────────────▼────────────────────────▼───────────────┐ │
-│  │                      Shared Layer                                │ │
-│  │  findings-normalizer · risk-scorer · siem-correlator             │ │
-│  │  secret-rotation-auditor · logger · retry / backoff              │ │
-│  └──────────────────────────────────────────────────────────────────┘ │
-└──────────┬──────────────────────┬──────────────────────┬─────────────┘
-           │                      │                      │
-  ┌────────▼────────┐   ┌────────▼──────────┐   ┌───────▼─────────┐
-  │    AWS (15)      │   │   Azure (13)      │   │    GCP (13)     │
-  │                  │   │                   │   │                 │
-  │  SecurityHub     │   │  Defender         │   │  SCC            │
-  │  GuardDuty       │   │  Sentinel         │   │  Chronicle      │
-  │  Inspector       │   │  Entra ID Protect │   │  IAM Recommender│
-  │  IAM Analyzer    │   │  Purview DLP      │   │  Cloud DLP      │
-  │  Macie           │   │  Azure Policy     │   │  Cloud Armor    │
-  │  CloudTrail      │   │  Key Vault        │   │  Binary Auth    │
-  │  Detective       │   │  Firewall         │   │  Artifact Reg.  │
-  │  Config Rules    │   │  DDoS Protection  │   │  VPC SC         │
-  │  WAF             │   │  Container Reg.   │   │  Cloud KMS      │
-  │  Shield          │   │  Network Watcher  │   │  Secret Manager │
-  │  Net Firewall    │   │  Defender Endpt   │   │  Asset Inventory│
-  │  Secrets Mgr     │   │  App Service      │   │  Access Transp. │
-  │  KMS             │   │  DevOps Security  │   │  Audit Logs     │
-  │  ECR             │   │                   │   │                 │
-  │  SSM Patch       │   │                   │   │                 │
-  └──────────────────┘   └───────────────────┘   └─────────────────┘
-```
+## Architecture
+
+![Multi-Cloud Security MCP Server Architecture](docs/architecture.svg)
 
 ---
 
