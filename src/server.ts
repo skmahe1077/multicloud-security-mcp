@@ -61,7 +61,6 @@ import { registerPolicyLibrary } from "./resources/policy-library.js";
 
 const limit = pLimit(3);
 
-// ─── Connectivity cache ─────────────────────────────────────────────
 let connectivityCache: { result: Record<string, unknown>; timestamp: number } | null = null;
 
 function getCacheTTL(): number {
@@ -127,20 +126,7 @@ export interface CreateServerOptions {
   clouds?: ("aws" | "azure" | "gcp")[];
 }
 
-/**
- * Create and configure the Multi-Cloud Security MCP server.
- *
- * Call this to get a fully-wired `McpServer` instance that you can
- * connect to any MCP transport (stdio, SSE, etc.).
- *
- * ```ts
- * import { createServer } from "multicloud-security-mcp";
- * import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
- *
- * const server = createServer();
- * await server.connect(new StdioServerTransport());
- * ```
- */
+/** Builds a fully-wired McpServer instance, ready to connect to any MCP transport (stdio, SSE, etc). */
 export function createServer(options: CreateServerOptions = {}): McpServer {
   const serverName = options.name ?? process.env["MCP_SERVER_NAME"] ?? "multicloud-security-mcp";
   const serverVersion = options.version ?? process.env["MCP_SERVER_VERSION"] ?? "1.0.0";
@@ -155,7 +141,6 @@ export function createServer(options: CreateServerOptions = {}): McpServer {
     clouds: [...enabledClouds],
   });
 
-  // ─── Register cloud-specific tools ────────────────────────────────
   if (enabledClouds.has("aws")) {
     registerSecurityHub(server);
     registerGuardDuty(server);
@@ -210,7 +195,6 @@ export function createServer(options: CreateServerOptions = {}): McpServer {
   registerComplianceResources(server);
   registerPolicyLibrary(server);
 
-  // ─── validate_cloud_connectivity ────────────────────────────────
   server.tool(
     "validate_cloud_connectivity",
     "Check connectivity to AWS, Azure, and GCP with a lightweight read call per cloud",
@@ -248,7 +232,6 @@ export function createServer(options: CreateServerOptions = {}): McpServer {
     }
   );
 
-  // ─── X1: multicloud_get_critical_findings ───────────────────────
   server.tool(
     "multicloud_get_critical_findings",
     "Get critical security findings across AWS, Azure, and GCP in parallel. Returns unified NormalizedFinding[] sorted by risk score.",
@@ -395,7 +378,6 @@ export function createServer(options: CreateServerOptions = {}): McpServer {
     }
   );
 
-  // ─── X2: multicloud_compliance_dashboard ────────────────────────
   server.tool(
     "multicloud_compliance_dashboard",
     "Aggregated compliance posture across clouds for CIS, NIST, SOC2, ISO27001, or PCI_DSS frameworks",
@@ -493,7 +475,6 @@ export function createServer(options: CreateServerOptions = {}): McpServer {
     }
   );
 
-  // ─── X3: multicloud_iam_blast_radius ────────────────────────────
   server.tool(
     "multicloud_iam_blast_radius",
     "Analyze cross-cloud privilege exposure for given identities across AWS, Azure, and GCP",
@@ -558,7 +539,6 @@ export function createServer(options: CreateServerOptions = {}): McpServer {
     }
   );
 
-  // ─── X4: multicloud_siem_correlation ────────────────────────────
   server.tool(
     "multicloud_siem_correlation",
     "Correlate security events across AWS CloudTrail, Azure Sentinel, and GCP Audit Logs by IP, account, resource, or email",
@@ -655,7 +635,6 @@ export function createServer(options: CreateServerOptions = {}): McpServer {
     }
   );
 
-  // ─── X5: multicloud_secret_rotation_audit ───────────────────────
   server.tool(
     "multicloud_secret_rotation_audit",
     "Audit secret and key rotation status across AWS Secrets Manager, Azure Key Vault, GCP Secret Manager and KMS",

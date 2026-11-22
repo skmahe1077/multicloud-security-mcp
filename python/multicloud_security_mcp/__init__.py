@@ -1,19 +1,4 @@
-"""
-Multi-Cloud Security MCP Server
-
-Unified security visibility across AWS, Azure, and GCP for AI agents and Claude Desktop.
-
-Usage:
-    # CLI
-    multicloud-security-mcp
-
-    # Python module
-    python -m multicloud_security_mcp
-
-    # Programmatic
-    from multicloud_security_mcp import serve
-    serve()
-"""
+"""Multi-Cloud Security MCP Server — unified security visibility across AWS, Azure, and GCP."""
 
 __version__ = "1.0.0"
 

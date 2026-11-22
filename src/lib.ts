@@ -1,20 +1,4 @@
-/**
- * Public API for programmatic usage.
- *
- * ```ts
- * import {
- *   createServer,
- *   // types
- *   NormalizedFinding,
- *   VulnerabilityFinding,
- *   IAMRiskFinding,
- *   NetworkFinding,
- *   // utilities
- *   computeRiskScore,
- *   correlateFindings,
- * } from "multicloud-security-mcp";
- * ```
- */
+// Public API for programmatic usage.
 
 // Server factory
 export { createServer, type CreateServerOptions } from "./server.js";

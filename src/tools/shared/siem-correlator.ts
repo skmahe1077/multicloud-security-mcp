@@ -81,7 +81,7 @@ function buildCorrelationSummary(
     summary += ` ${critCount} are CRITICAL/HIGH severity.`;
   }
   if (isCrossCloud) {
-    summary += ` ⚠ CROSS-CLOUD THREAT INDICATOR: Same entity detected in multiple cloud environments.`;
+    summary += ` Cross-cloud threat indicator: same entity detected in multiple cloud environments.`;
   }
   return summary;
 }

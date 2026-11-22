@@ -9,7 +9,7 @@ import { IAMRiskFinding } from "../../types/identity.js";
 import { NetworkFinding } from "../../types/network.js";
 import { computeRiskScore } from "./risk-scorer.js";
 
-// ─── AWS Normalizers ────────────────────────────────────────────────
+// AWS normalizers
 
 export function normalizeSecurityHubFinding(raw: Record<string, unknown>): NormalizedFinding {
   const severity = mapAwsSeverity(raw["Severity"] as Record<string, unknown>);
@@ -120,7 +120,7 @@ export function normalizeIAMAccessFinding(raw: Record<string, unknown>): IAMRisk
   return finding;
 }
 
-// ─── Azure Normalizers ──────────────────────────────────────────────
+// Azure normalizers
 
 export function normalizeDefenderAlert(raw: Record<string, unknown>): NormalizedFinding {
   const props = (raw["properties"] as Record<string, unknown>) ?? raw;
@@ -199,7 +199,7 @@ export function normalizeEntraRiskyUser(raw: Record<string, unknown>): IAMRiskFi
   return finding;
 }
 
-// ─── GCP Normalizers ────────────────────────────────────────────────
+// GCP normalizers
 
 export function normalizeSCCFinding(raw: Record<string, unknown>): NormalizedFinding {
   const finding: NormalizedFinding = {
@@ -275,7 +275,7 @@ export function normalizeGCPIAMRecommendation(raw: Record<string, unknown>): IAM
   return finding;
 }
 
-// ─── Helpers ────────────────────────────────────────────────────────
+// Helpers
 
 function mapAwsSeverity(severity: Record<string, unknown> | undefined): Severity {
   const label = ((severity?.["Label"] as string) ?? "INFORMATIONAL").toUpperCase();

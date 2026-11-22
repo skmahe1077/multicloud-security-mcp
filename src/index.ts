@@ -1,13 +1,6 @@
 #!/usr/bin/env node
 
-/**
- * CLI entry point — starts the MCP server over stdio.
- *
- * Usage:
- *   npx multicloud-security-mcp          # run via npx
- *   multicloud-security-mcp              # run if installed globally
- *   node dist/index.js                   # run directly
- */
+// CLI entry point — starts the MCP server over stdio.
 
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import dotenv from "dotenv";

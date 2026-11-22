@@ -1,10 +1,4 @@
-"""
-Thin Python wrapper that starts the Node.js MCP server.
-
-Resolves the built JS entry point from the bundled npm package and
-executes it via Node.js, forwarding stdio so the MCP transport works
-transparently.
-"""
+"""Thin Python wrapper that starts the Node.js MCP server."""
 
 from __future__ import annotations
 
@@ -26,7 +20,6 @@ def _find_node() -> str:
         )
         sys.exit(1)
 
-    # Quick version check
     try:
         result = subprocess.run(
             [node, "--version"],
@@ -44,31 +37,22 @@ def _find_node() -> str:
             )
             sys.exit(1)
     except (subprocess.TimeoutExpired, ValueError, IndexError):
-        pass  # best-effort — let it fail later if node is truly broken
+        pass
 
     return node
 
 
 def _find_server_js() -> str:
-    """Locate the compiled index.js entry point.
-
-    Search order:
-      1. Bundled alongside this Python package  (pip install from sdist/wheel)
-      2. Relative to repo root                  (development / editable install)
-      3. npx fallback                           (global npm package)
-    """
-    # 1) Bundled: python/multicloud_security_mcp/../../dist/index.js
+    """Locate the compiled index.js entry point."""
     pkg_dir = Path(__file__).resolve().parent
     bundled = pkg_dir / "dist" / "index.js"
     if bundled.is_file():
         return str(bundled)
 
-    # 2) Repo-relative: <repo>/dist/index.js
     repo_dist = pkg_dir.parent.parent / "dist" / "index.js"
     if repo_dist.is_file():
         return str(repo_dist)
 
-    # 3) Let npx resolve it
     return ""
 
 
