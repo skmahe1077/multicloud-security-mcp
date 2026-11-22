@@ -6,7 +6,7 @@
 
 A production-ready **Model Context Protocol (MCP)** server providing unified security visibility across **AWS**, **Azure**, and **GCP**. Designed for AI agents and Claude Desktop.
 
-**46 security tools** spanning threat detection, vulnerability management, IAM security, data protection, network security, key/secret management, container security, and compliance — all exposed through a single MCP server.
+**47 security tools** spanning threat detection, vulnerability management, IAM security, data protection, network security, key/secret management, container security, and compliance — all exposed through a single MCP server.
 
 ## Install
 

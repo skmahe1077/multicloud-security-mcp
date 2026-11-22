@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="docs/multicloud-security-mcp-logo.svg" alt="multicloud-security-mcp" width="520"/>
+  <img src="https://raw.githubusercontent.com/skmahe1077/multicloud-security-mcp/main/docs/multicloud-security-mcp-logo.svg" alt="multicloud-security-mcp" width="520"/>
 </p>
 
 [![npm version](https://img.shields.io/npm/v/multicloud-security-mcp.svg)](https://www.npmjs.com/package/multicloud-security-mcp)
@@ -11,13 +11,13 @@
 
 A production-ready **Model Context Protocol (MCP)** server providing unified security visibility across **AWS**, **Azure**, and **GCP**. Built for AI agents and Claude Desktop.
 
-**46 security tools** | **5 MCP resources** | **3 cloud providers** | **1 unified interface**
+**47 security tools** | **6 MCP resources** | **3 cloud providers** | **1 unified interface**
 
 ---
 
 ## Features
 
-- **46 security tools** spanning threat detection, vulnerability management, IAM analysis, data protection, network security, key/secret management, container security, and compliance
+- **47 security tools** spanning threat detection, vulnerability management, IAM analysis, data protection, network security, key/secret management, container security, and compliance
 - **5 cross-cloud tools** for aggregated findings, compliance dashboards, IAM blast radius analysis, SIEM correlation, and secret rotation auditing
 - **Normalized finding schema** that unifies findings from all three clouds into a single `NormalizedFinding` format with risk scoring (0-100)
 - **Resilient by design** with exponential backoff, jitter-based retry (100ms base, 5 retries), and 30-second SDK timeouts
@@ -30,7 +30,7 @@ A production-ready **Model Context Protocol (MCP)** server providing unified sec
 
 ## Architecture
 
-![Multi-Cloud Security MCP Server Architecture](docs/multicloud-security-mcp-architecture.svg)
+![Multi-Cloud Security MCP Server Architecture](https://raw.githubusercontent.com/skmahe1077/multicloud-security-mcp/main/docs/multicloud-security-mcp-architecture.svg)
 
 ---
 
