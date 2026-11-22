@@ -1,6 +1,6 @@
 {
   "name": "multicloud-security-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Multi-Cloud Security MCP Server — unified security visibility across AWS, Azure, and GCP for AI agents and Claude Desktop",
   "type": "module",
   "main": "dist/lib.js",
@@ -63,12 +63,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devopstronaut/multicloud-security-mcp.git"
+    "url": "git+https://github.com/skmahe1077/multicloud-security-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/devopstronaut/multicloud-security-mcp/issues"
+    "url": "https://github.com/skmahe1077/multicloud-security-mcp/issues"
   },
-  "homepage": "https://github.com/devopstronaut/multicloud-security-mcp#readme",
+  "homepage": "https://github.com/skmahe1077/multicloud-security-mcp#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
 

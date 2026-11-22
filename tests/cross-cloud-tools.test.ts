@@ -55,7 +55,7 @@ describe("SIEM Correlator", () => {
     expect(result[0].clouds).toContain("aws");
     expect(result[0].clouds).toContain("gcp");
     expect(result[0].findings).toHaveLength(2);
-    expect(result[0].summary).toContain("CROSS-CLOUD THREAT INDICATOR");
+    expect(result[0].summary).toContain("Cross-cloud threat indicator");
   });
 
   it("correlates findings by account ID", () => {

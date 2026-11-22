@@ -42,9 +42,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/devopstronaut/multicloud-security-mcp"
-Repository = "https://github.com/devopstronaut/multicloud-security-mcp"
-Issues = "https://github.com/devopstronaut/multicloud-security-mcp/issues"
+Homepage = "https://github.com/skmahe1077/multicloud-security-mcp"
+Repository = "https://github.com/skmahe1077/multicloud-security-mcp"
+Issues = "https://github.com/skmahe1077/multicloud-security-mcp/issues"
 
 [project.scripts]
 multicloud-security-mcp = "multicloud_security_mcp:serve"
